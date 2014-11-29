@@ -1,0 +1,21 @@
+#header {
+    background-color:#E8E8E8 ;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+
+#footer {
+    background-color:#FF0066;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:100px; 
+}
+
+
+#text {
+    color:#FF0066;
+    clear:both;
+   
+}
