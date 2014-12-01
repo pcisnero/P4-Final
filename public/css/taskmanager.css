@@ -42,14 +42,42 @@ a:link, a:visited, a:active, a:hover {
 	font-family:consolas;
 }
 
-.book {
+.name-task {
+	color:#006;
+	font-size:18px;
+}
+
+.task {
 	border:1px solid #ccc;
 	padding:10px;
 	padding-top:0px;
 	float:left;
-	width:300px;
+	width:650px;
 	margin-right:10px;
 	margin-bottom:10px;
-	height:375px;
+	height:100px;
 
+}
+
+.btn-edit{
+	padding:15px;
+	border:1px solid #ccc;
+	float:right;
+	padding:10px;
+	margin-right:10px;
+	margin-top:5px;
+}
+
+.image{
+	border:1px solid #ccc;
+	float:left;
+}
+
+button.btn-delete{
+	float:right;
+}
+
+.completed{
+	color:#060;
+	font-weight:bold;
 }

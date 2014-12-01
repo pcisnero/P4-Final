@@ -20,5 +20,11 @@ class IndexController extends BaseController {
 		return View::make('index');
 
 	}
+	
+	
+	
+	
+	
+	
 
 }

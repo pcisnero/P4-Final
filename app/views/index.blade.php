@@ -10,14 +10,8 @@
 
 @section('content')
 
-	{{ Form::open(array('url' => '/book', 'method' => 'GET')) }}
-
-		{{ Form::label('query','Search') }}
-
-		{{ Form::text('query'); }}
-
-		{{ Form::submit('Search'); }}
-
-	{{ Form::close() }}
+		@if(Auth::check())			<!-- Si el usuario está logueado da un texto de bienvenida -->
+			Welcome to taskManager
+		@endif						<!-- Se cierra el if. Si no está logueado no muestra nada-->
 
 @stop

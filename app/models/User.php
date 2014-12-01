@@ -22,5 +22,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password', 'remember_token');
+	
+	public function getId()	//Se anexa función para obtener el ID del usuario logueado y poder comparar o identificarlo
+	{
+	  return $this->id;
+	}
 
 }

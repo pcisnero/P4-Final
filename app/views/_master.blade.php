@@ -22,19 +22,29 @@
 
 	<nav>
 		<ul>
+        <!-- Verifica si el usuario está logueado, si es asi, visualiza el menu-->
 		@if(Auth::check())
 			<li><a href='/logout'>Log out {{ Auth::user()->email; }}</a></li>
-			<li><a href='/book'>All Task</a></li>
-			<li><a href='/book/search'>Search Task (w/ Ajax)</a></li>
-			<li><a href='/tag'>All Tags</a></li>
-			<li><a href='/book/create'>+ Add Task</a></li>
-			<li><a href='/debug/routes'>Routes</a></li>
-		@else
+            <li><a href='/task'>All Task</a></li>
+			<li><a href='/task/create'>+ Add Task</a></li>
+            <li><a href='/task/nocomplete'>Pending Task</a></li>            
+            <li><a href='/task/completed'>Completed task</a></li>                 
+			<li><a href='/type'>Types</a></li>			
+            <li><div>
+            <!--  Form para busqueda -->
+            {{ Form::open(array('url' => '/task', 'method' => 'GET')) }}
+                {{ Form::label('query','Search') }}        
+                {{ Form::text('query'); }}        
+                {{ Form::submit('Search'); }}        
+            {{ Form::close() }}
+        </div></li>
+		@else <!-- si el usuario no está logueado visualiza para registrarse o login -->
 			<li><a href='/signup'>Sign up</a> or <a href='/login'>Log in</a></li>
 		@endif
 		</ul>
 	</nav>
-
+	
+    
 	
 
 	@yield('content')

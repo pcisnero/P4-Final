@@ -68,7 +68,7 @@ class UserController extends BaseController {
 		# Log in
 		Auth::login($user);
 
-		return Redirect::to('/')->with('flash_message', 'Welcome to Foobooks!');
+		return Redirect::to('/')->with('flash_message', 'Welcome to TaskManager!');
 
 	}
 
