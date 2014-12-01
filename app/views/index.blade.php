@@ -15,3 +15,5 @@
 		@endif						<!-- Se cierra el if. Si no está logueado no muestra nada-->
 
 @stop
+
+   

@@ -46,7 +46,7 @@
 
 @stop
 
-
+   <img src=' {{ URL::asset('images/cat.jpg') }} ' alt='Company Logo'>
 
 
 
