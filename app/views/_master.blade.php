@@ -39,16 +39,19 @@
             {{ Form::close() }}
         </div></li>
 		@else <!-- si el usuario no está logueado visualiza para registrarse o login -->
-			<li><a href='/signup'>Sign up</a> or <a href='/login'>Log in</a></li>
+			<li><a href='/signup' class='registrarte'>Register</a><a href='/login'class='logearte'>Log in</a></li>
 		@endif
 		</ul>
 	</nav>
 	
-    
+    <img src=' {{ URL::asset('images/cathuellas.jpg') }} ' alt='Company Logo'>
 	
-
+  
+     
 	@yield('content')
-   <img src=' {{ URL::asset('images/cat.jpg') }} ' alt='Company Logo'>
+  
+    
+
 	@yield('/body')
 
 </body>

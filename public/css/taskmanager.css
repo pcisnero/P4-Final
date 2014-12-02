@@ -1,13 +1,40 @@
 body {
 	padding:20px;
+	
 }
 
 .logo {
-	width:500px;
+	width:800px;
 	margin-bottom:20px;
 	display:block;
+	margin-left: auto;
+    margin-right: auto;
 }
 
+.registrarte {
+	width:120px;
+	margin-bottom:5px;
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+	background: #FF0066;
+    border: 1px solid;
+	color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 1.2em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.logearte {
+	width:120px;
+	margin-bottom:5px;
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+	background: #FF0066;
+    border: 1px solid rgba(33, 68, 72, 0.59);
+	color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 1.2em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
 label,input {
 	display:block;
 	margin-top:10px;
