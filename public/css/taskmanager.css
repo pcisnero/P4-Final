@@ -12,28 +12,32 @@ body {
 }
 
 .registrarte {
-	width:120px;
+	width:150px;
+	padding:3px;
 	margin-bottom:5px;
-	display:block;
-	margin-left: auto;
+	display:inline-block;
+	margin-left: 500px;
     margin-right: auto;
 	background: #FF0066;
-    border: 1px solid;
-	color: rgba(0, 0, 0, 0.55);
+    border: 20px solid;
+	border-style:solid;
+	color: white;
     text-align: center;
-    font: bold 1.2em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font: bold 1.0em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 .logearte {
-	width:120px;
+	width:150px;
+	padding: 3px;
 	margin-bottom:5px;
-	display:block;
+	display:inline-block;
 	margin-left: auto;
     margin-right: auto;
 	background: #FF0066;
-    border: 1px solid rgba(33, 68, 72, 0.59);
-	color: rgba(0, 0, 0, 0.55);
+    border: 20px solid ;
+	border-style:solid;
+	color: white;
     text-align: center;
-    font: bold 1.2em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font: bold 1.0em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 label,input {
 	display:block;
@@ -45,7 +49,7 @@ label,input {
 	position:absolute;
 	top:0;
 	left:0;
-	background-color:yellow;
+	background-color:FF0066;
 	text-align:center;
 	padding:5px;
 }
@@ -61,7 +65,7 @@ nav ul li {
 }
 
 a:link, a:visited, a:active, a:hover {
-	text-decoration:underline;
+	text-decoration:none;
 }
 
 .tags {

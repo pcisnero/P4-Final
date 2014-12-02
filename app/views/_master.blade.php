@@ -44,13 +44,13 @@
 		</ul>
 	</nav>
 	
-    <img src=' {{ URL::asset('images/cathuellas.jpg') }} ' alt='Company Logo'>
+   
 	
-  
+
      
 	@yield('content')
   
-    
+     <img src=' {{ URL::asset('images/cathuellas.jpg') }} ' alt='Company Logo'>
 
 	@yield('/body')
 
