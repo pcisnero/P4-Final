@@ -1,4 +1,6 @@
-# Task Manager  ![alt tag](http://cdn.flaticon.com/png/256/40819.png)
+# Task Manager  
+
+![alt tag](http://cdn.flaticon.com/png/256/40819.png)
 
 ----
 ## Live URL 
