@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<h1>Tasks Completed</h1>
+	<div class="tx-h">Tasks Completed</div>
 
 	@if(sizeof($tasks) == 0)
 		No results
@@ -14,6 +14,7 @@
 
 		@foreach($tasks as $task)		
             
+            <div class="inbox">
             <section class='task'>
 
 				<div class="name-task">{{ $task['name'] }}</div>	<!-- Nombre de la terea -->
@@ -25,19 +26,20 @@
                     {{---- DELETE -----}}	<!-- Botón de borrar tarea -->
                     {{ Form::open(array('url' => '/task/delete')) }}
                         {{ Form::hidden('id',$task['id']); }}	<!-- hidden para el id de la tarea  -->
-                        <button onClick='parentNode.submit();return false;' class="btn-delete">Delete</button>
+                        <button onClick='parentNode.submit();return false;' class="btn-delete"><i class="fa fa-trash fa-lg"></i></button>
                     {{ Form::close() }}
                 </div>
 				
 				
-					{{ $task['date']}} <br> <!-- Muestra la fecha de la tarea -->
+				<div class="date-task"><b>Date: <span style="color:#D85027">{{ $task['date']}}</span> </b></div><br>
                     
                      
-                <span class="completed">Completed</span>	<!-- Al mostrar solo tareas completas muestra la leyenda -->
+                <div class="completed"><i class="fa fa-check fa-lg"></i>Completed</div>	<!-- Al mostrar solo tareas completas muestra la leyenda -->
                     
                     
 				          
-			</section>     	
+			</section>  
+            </div>   	
             
 		@endforeach
 

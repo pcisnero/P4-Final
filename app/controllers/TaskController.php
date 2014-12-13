@@ -72,7 +72,7 @@ class TaskController extends \BaseController {
 	* Display all task completed
 	* @return View
 	*/
-	public function getNoComplete() { //Se agregó ésta funcion para obtener las tareas no completadas
+	public function getInbox() { //Se agregó ésta funcion para obtener las tareas no completadas
 		
 		if (Auth::check())
 		{
@@ -80,11 +80,11 @@ class TaskController extends \BaseController {
 		}
 		
 		
-		$tasks = Task::tncompleted($users);//La función se cambió a tncompleted pues las consultas que obtiene sólo trae las tareas
+		$tasks = Task::inbox($users);//La función se cambió a tncompleted pues las consultas que obtiene sólo trae las tareas
 										   //que no han sido completadas. Ésta función se define en models/Task.php
 										   //Tiene como parámetro o variable a enviar $users, el usuario logueado
-			
-		return View::make('task_nocomplete')	//Devuelve la 'vista' de los datos en task_nocomplete
+		
+		return View::make('task_inbox')	//Devuelve la 'vista' de los datos en task_nocomplete
 				->with('tasks', $tasks);			
 			
 	}

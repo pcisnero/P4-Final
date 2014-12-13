@@ -94,7 +94,7 @@ class Task extends Eloquent {
     * Search among tasks, priorities and types
     * @return Collection
     */
-    public static function tncompleted($users) {	//Se cambia el nombre de la función
+    public static function inbox($users) {	//Se cambia el nombre de la función
 		
         if($users) {								//Si la variable retorna valor entonces entra
             $tasks = Task::with('type','priority')	//Obtiene los datos de las tablas de prioridad y tipo

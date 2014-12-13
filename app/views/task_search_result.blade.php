@@ -17,5 +17,3 @@
 	<br>
 	<a href='/task/edit/{{ $task->id }}'>Edit</a>
 </section>
-
-   <img src=' {{ URL::asset('images/cat.jpg') }} ' alt='Company Logo'>

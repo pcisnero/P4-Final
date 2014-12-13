@@ -6,20 +6,17 @@
 
 @section('content')
 
-<h1>Log in</h1>
+<div id="index">
+	Login with your registered details
+		 {{ Form::open(array('url' => '/login')) }}
 
-{{ Form::open(array('url' => '/login')) }}
-
-    {{ Form::label('email') }}
-    {{ Form::text('email','yourmail@domain.com') }}
-
-    {{ Form::label('password') }} 
-    {{ Form::password('password') }}
-
-    {{ Form::submit('Submit') }}
-
-{{ Form::close() }}
-
+                {{ Form::label('email') }}
+                {{ Form::text('email') }}
+                {{ Form::label('password') }} 
+                {{ Form::password('password') }}
+            	<br />
+                {{ Form::submit('Submit', array('class' => 'login')) }}
+            
+          {{ Form::close() }}
+</div>
 @stop
-
- 

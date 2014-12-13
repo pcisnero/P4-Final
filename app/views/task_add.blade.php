@@ -6,48 +6,48 @@
 
 @section('content')
 
-	<h1>Add a new task</h1>
-
+	<div class="inbox">
+	<div class="tx-h">Add a new task</div>
+    <div class="forma">
+    <table class="table-form">
 	{{ Form::open(array('url' => '/task/create')) }}
-
-		{{ Form::label('name','Name') }}	<!-- Campo Name aquí el texto y haciendo referencia al select -->
-		{{ Form::text('name'); }}			<!-- Campo 'name' haciendo sin valor asignado(el valor lo escribimos)-->
-
-		{{ Form::label('priority_id', 'Priority') }}		<!-- Campo Priority aquí el texto y haciendo referencia al select -->
-		{{ Form::select('priority_id', $priorities); }}		<!-- Campo 'priority_id' haciendo referencia a la tabla 'priorities'-->
-        
-        {{ Form::label('type_id', 'Type') }}		<!-- Campo Type aquí el texto y haciendo referencia al select -->
-		{{ Form::select('type_id', $types); }}		<!-- Campo 'type_id' haciendo referencia a la tabla 'types'-->
-        
-        <!-- Aquí los archivos para poder visualizar y que funcione el datepicker-->
-        <!-- Se encuentra en la carpeta app/public/datepicker -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="/datepicker/css/datepicker.css">
-		<script type="text/javascript" src="/datepicker/js/bootstrap-datepicker.js"></script>
+		
+        <tr>
+        	<td class="col1">{{ Form::label('name','Name') }}</td>	
+			<td class="col2">{{ Form::text('name'); }}</td>			
+		</tr>
+        <tr>
+			<td class="col1">{{ Form::label('priority_id', 'Priority') }}</td>		
+			<td class="col2">{{ Form::select('priority_id', $priorities, array('class' => 'ui-selectmenu-menu')) }}	</td>	
+        </tr>
+        <tr>
+        	<td class="col1">{{ Form::label('type_id', 'Type') }}</td>		
+			<td class="col2">{{ Form::select('type_id', $types); }}	</td>	
+        </tr>
+        <tr>     
         <script type="text/javascript">
 		$(document).ready(function() {
-			    $('#datepicker').datepicker({
-					format: "yyyy-mm-dd",   <!-- Formato del datepicker año-mes-dia (default en mysql) -->
-					todayBtn: true,			<!-- ésta opción permite remarcar el dia de hoy en el calendario-->
-					autoclose: true			<!-- ésta opción desaparece el calendario una vez que se eligió fecha-->
-					});
+				$('#datepicker').datepicker({
+					dateFormat: "yy-mm-dd",  
+					todayBtn: true,			
+					autoclose: true			
+					}).val();
 		} );
 		</script>
-        <!-- Aquí el input para la fecha, en los valores se llama 'date' y null pertenece al valor del input, 
-        en éste caso nulo, pues aquí va la fecha -->
-        {{ Form::text('date', null, array(		
+        	<td class="col1">{{ Form::label('date', 'Date') }}</td>
+        	<td class="col2">{{ Form::text('date', null, array(		
         
         'type' => 'text', 			
         'class' => 'form-control',	
         'placeholder' => 'Pick the date this task should be completed',	
-        'id' => 'datepicker'))}}			
-        
-		{{ Form::hidden('user_id',  Auth::user()->id); }}	
-
-		{{ Form::submit('Add'); }}
-
-	{{ Form::close() }}
+        'id' => 'datepicker'))}}	</td>		
+        </tr>
+		<tr><td colspan="2">
+        {{ Form::hidden('user_id',  Auth::user()->id); }}	
+		<br /><br />
+		<div align="center">{{ HTML::decode(Form::button('<i class="fa fa-plus fa-lg"></i>&nbsp;&nbsp;Add', array('type' => 'submit','class' => 'login'))) }}</div>
+ 	</td></tr>
     
+	{{ Form::close() }}</table>
+    </div></div>
 @stop
-
-   

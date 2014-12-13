@@ -88,7 +88,6 @@ $paragraphs1 = $generator->getParagraphs($paragraphs);
 </div>
 
 </body>
-      '>
 
 </html>
 

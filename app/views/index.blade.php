@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-	Welcome to Task Manager
+	Task Manager
 @stop
 
 @section('head')
@@ -10,10 +10,23 @@
 
 @section('content')
 
-		@if(Auth::check())			<!-- Si el usuario está logueado da un texto de bienvenida -->
+		@if(Auth::check())			
 			Welcome to taskManager
-		@endif						<!-- Se cierra el if. Si no está logueado no muestra nada-->
+            
+        @else
+        
+            <div id="container">
+                
+                    <div id="tx1">
+                    Access your account<br><br>
+                    <a href='/login' class="btn-login">Log in</a>
+                    </div>
+                        <div id="tx2">
+                        Do not have an account?<br><br>
+                        <a href='/signup' class="btn-login">Sign up</a>
+                        </div>
+               <br><br><br>
+            
+		@endif						
 
 @stop
-
-   

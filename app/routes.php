@@ -15,9 +15,10 @@ Route::get('/', 'IndexController@getIndex');
 * (Explicit Routing)
 */
 Route::get('/signup','UserController@getSignup' );
-Route::get('/login', 'UserController@getLogin' );
 Route::post('/signup', 'UserController@postSignup' );
+
 Route::post('/login', 'UserController@postLogin' );
+Route::get('/login', 'UserController@getLogin' );
 Route::get('/logout', 'UserController@getLogout' );
 
 
@@ -27,7 +28,7 @@ Route::get('/logout', 'UserController@getLogout' );
 */
 Route::get('/task', 'TaskController@getIndex');	
 Route::get('/task/completed', 'TaskController@getCompleted'); //para listado de tareas completadas
-Route::get('/task/nocomplete', 'TaskController@getNoComplete'); //para listado de tareas no completas
+Route::get('/task/inbox', 'TaskController@getInbox'); //para listado de tareas no completas
 
 Route::get('/task/edit/{id}', 'TaskController@getEdit');
 Route::post('/task/edit', 'TaskController@postEdit');

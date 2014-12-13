@@ -7,22 +7,33 @@
 
 
 @section('content')
+<div class="tx-h">Types</div>
 
-	<h2>Types</h2>
-
-
-	<a href='/type/create'>+ Add a new type</a>		<!-- Enlace para agregar un nuevo tipo de tarea-->
+	<div class="inbox">
+    <div class="forma">
+        
+    <div align="right"><a href='/type/create' class="login"><i class="fa fa-plus fa-lg"></i>&nbsp;&nbsp; Add a new type</a></div>   
+			<!-- Enlace para agregar un nuevo tipo de tarea-->
 
 	<br><br>
 
 	@foreach($types as $type)
 
-		<div>
-			<img class='image' src='{{ $type->icon_url }}'>		<!-- Icono del tipo de tarea-->
-            <a href='/type/{{ $type->id }}'>{{ $type->description }}</a><br /><br /><br /><br /> <!-- descripción del tipo de tarea-->
+		<div class='types'>
+			<img class='imaget' src='{{ $type->icon_url }}'>		
+            <br />{{ $type->description }}
+            <br /><br />
+            {{---- Edit ----}}
+            <a href='/type/{{ $type->id }}/edit'  class="btn-edit2" style="color:#333"><i class="fa fa-edit fa-lg"></i></a>	<!-- Enlace para modificar los valores del tipo de tarea -->
+        
+            {{---- Delete -----}}							<!-- Enlace para eliminar el tipo de tarea -->
+            {{ Form::open(['method' => 'DELETE', 'action' => ['TypeController@destroy', $type->id]]) }}
+                <a href='javascript:void(0)' onClick='parentNode.submit();return false;'  class="btn-delete2" style="color:#FFF"><i class="fa fa-trash fa-lg"></i></a>
+            {{ Form::close() }}
 		</div>
 
 	@endforeach
 
+	</div>
+	</div>
 @stop
-

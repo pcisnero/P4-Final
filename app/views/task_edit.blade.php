@@ -10,58 +10,53 @@
 
 @section('content')
 
-	<h1>Edit</h1>
-	<h2>{{{ $task['name'] }}}</h2>					<!-- nombre de la tarea-->
+	<div class="inbox">
+    <div class="tx-h">Edit</div>
+	<div class="tx-h2">{{{ $task['name'] }}}</div>					<!-- nombre de la tarea-->
 
+	<div class="forma">
+    <table class="table-form">
 	{{---- EDIT -----}}
 	{{ Form::open(array('url' => '/task/edit')) }}
 		{{ Form::hidden('id',$task['id']); }}		<!-- hidden del id de la tarea-->
 
-		<div class='form-group'>
-			{{ Form::label('name','Name') }}		<!-- input con el nombre de la tarea a modificar-->
-			{{ Form::text('name',$task['name']); }}
-		</div>
+		<tr>
+			<td class="col1">{{ Form::label('name','Name') }}</td>		<!-- input con el nombre de la tarea a modificar-->
+			<td class="col2">{{ Form::text('name',$task['name']); }}</td>
+		</tr>
 
-		<div class='form-group'>
-			{{ Form::label('priority_id', 'Priority') }}	<!-- select con el la prioridad de la tarea seleccionado-->
-			{{ Form::select('priority_id', $priorities, $task->priority_id); }} 
+		<tr>
+			<td class="col1">{{ Form::label('priority_id', 'Priority') }}</td>	<!-- select con el la prioridad de la tarea seleccionado-->
+			<td class="col2">{{ Form::select('priority_id', $priorities, $task->priority_id); }} </td>
             <!-- $task->priority_id para seleccionar el id de la prioridad de la tarea a modificar-->
-		</div>
+		</tr>
         
-        <div class='form-group'>
-			{{ Form::label('type_id', 'Type') }}	<!-- select con el tipo de la tarea seleccionado-->
-			{{ Form::select('type_id', $types, $task->type_id); }}
+        <tr>
+			<td class="col1">{{ Form::label('type_id', 'Type') }}</td>	<!-- select con el tipo de la tarea seleccionado-->
+			<td class="col2">{{ Form::select('type_id', $types, $task->type_id); }}</td>
             <!-- $task->type_id para seleccionar el id del tipo de la tarea a modificar-->
-		</div>        
-        <!-- Aquí los archivos para poder visualizar y que funcione el datepicker-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="/datepicker/css/datepicker.css">
-		<script type="text/javascript" src="/datepicker/js/bootstrap-datepicker.js"></script>
+		</tr>
+        
+        <tr>   
         <script type="text/javascript">
 		$(document).ready(function() {
-			    $('#datepicker').datepicker({
-					format: "yyyy-mm-dd",
-					todayBtn: true,
-					autoclose: true
-					});
+				$('#datepicker').datepicker({
+					dateFormat: "yy-mm-dd",  
+					todayBtn: true,			
+					autoclose: true			
+					}).val();
 		} );
 		</script>
+        <td class="col1">{{ Form::label('date', 'Date') }}</td>
                 
-        {{ Form::text('date', $task['date'], array(	
+        <td class="col2">{{ Form::text('date', $task['date'], array(	
         'type' => 'text', 							
-        'class' => 'form-control','id' => 'datepicker'))}}	
-
-		{{ Form::submit('Save'); }}<br /><br />      
+        'class' => 'form-control','id' => 'datepicker'))}}	</td>
+		</tr>
+		<tr><td colspan="2"><br /><br /><div align="center">{{ HTML::decode(Form::button('<i class="fa fa-save fa-lg"></i>&nbsp;&nbsp;Save', array('type' => 'submit','class' => 'login'))) }}</div></td></tr>
         
 	{{ Form::close() }}
-	<div>
-		{{---- DELETE -----}}		<!-- Botón para elimiar la tarea -->
-		{{ Form::open(array('url' => '/task/delete')) }}
-			{{ Form::hidden('id',$task['id']); }}
-			<button onClick='parentNode.submit();return false;'>Delete</button>
-		{{ Form::close() }}
-	</div>
-
+    </table>
+    </div></div>
 
 @stop
-  
