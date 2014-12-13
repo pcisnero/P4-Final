@@ -1,6 +1,6 @@
 # Task Manager  
 
-![alt tag](http://cdn.flaticon.com/png/256/40819.png)
+ ![alt tag](http://cdn.flaticon.com/png/256/40819.png)
 
 ----
 ## Live URL 
@@ -30,5 +30,6 @@ A page to edit the content of existing tasks.
 
 ----
 ## Outside Code 
-* Bootstrap- font-awesome 
+* Font -  Bootstrap- font-awesome (http://fortawesome.github.io/Font-Awesome/icons/)
+*Button - (http://www.bestcssbuttongenerator.com/#/KSNnAYboUo)
 * I added images for the style and icons to make my App look better 
