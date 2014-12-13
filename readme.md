@@ -1,4 +1,4 @@
-# Task Manager  ![alt tag](http://www.dreamalittlebigger.com/wp-content/uploads/2014/01/cat-shape-dreamalittlebigger.jpg)
+# Task Manager  ![alt tag](http://cdn.flaticon.com/png/256/40819.png)
 
 ----
 ## Live URL 
