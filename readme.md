@@ -19,7 +19,7 @@ A page to edit the content of existing tasks.
 
 ----
 ## Demo
-[Demo Project 4]
+[Demo Project 4](http://screencast.com/t/6bbrj1ry)
 
 ----
 ## Details for teaching teams
